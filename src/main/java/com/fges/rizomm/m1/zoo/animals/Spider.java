@@ -1,15 +1,14 @@
 package com.fges.rizomm.m1.zoo.animals;
 
-public class Dog extends Vertebrate {
+public class Spider extends Invertebrate {
 
     @Override
     public String toString() {
-        return "Dog : " + super.toString();
+        return "Spider : " + super.toString();
     }
 
     @Override
     public String scream() {
-        return "Woof";
+        return "Psss";
     }
-
 }

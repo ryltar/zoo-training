@@ -1,10 +1,9 @@
 package com.fges.rizomm.m1.zoo;
 
-import com.fges.rizomm.m1.zoo.animals.Animal;
-import com.fges.rizomm.m1.zoo.animals.Cat;
-import com.fges.rizomm.m1.zoo.animals.Dog;
+import com.fges.rizomm.m1.zoo.animals.*;
 import com.fges.rizomm.m1.zoo.persons.AnimalKeeper;
-import com.fges.rizomm.m1.zoo.persons.Person;
+import com.fges.rizomm.m1.zoo.persons.Cleaner;
+import com.fges.rizomm.m1.zoo.places.impl.Cage;
 
 public class ZooApplication {
 
@@ -25,14 +24,15 @@ public class ZooApplication {
         rex.setName("Rex");
         gaia.setName("Gaia");
 
-        Person toto = new Person();
 
-        toto.addAnimal(gaia);
-        toto.addAnimal(felix);
+        Cage c1 = new Cage();
+
+        c1.addAnimal(gaia);
+        c1.addAnimal(felix);
 
         System.out.println("Animals of toto");
-        for (int i = 0; i < toto.getAnimals().size(); i++) {
-            Animal animal = toto.getAnimals().get(i);
+        for (int i = 0; i < c1.getAnimals().size(); i++) {
+            Animal animal = c1.getAnimals().get(i);
             switch (animal.getClass().getSimpleName()) {
                 case "Dog":
                     System.out.println("Dog");
@@ -43,12 +43,12 @@ public class ZooApplication {
             }
 
         }
-
-        AnimalKeeper keeper = new AnimalKeeper();
-        Animal dog = new Dog();
-
+        AnimalKeeper<Vertebrate> keeper = new AnimalKeeper<>();
+        Vertebrate dog = new Dog();
         System.out.println(dog.getEatCount());
         keeper.feed(dog, "steak");
         System.out.println(dog.getEatCount());
+        Cleaner<Cage> cleaner = new Cleaner<>();
+        cleaner.clean(c1);
     }
 }

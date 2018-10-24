@@ -1,24 +1,57 @@
 package com.fges.rizomm.m1.zoo.persons;
 
-import com.fges.rizomm.m1.zoo.animals.Animal;
+import java.time.LocalTime;
 
-import java.util.ArrayList;
-import java.util.List;
+public abstract class Person {
 
-public class Person {
+    private String nom;
+    private String prenom;
+    private int age;
+    private LocalTime startTime;
+    private LocalTime endTime;
 
-    private List<Animal> animals = new ArrayList<Animal>();
-
-    public List<Animal> getAnimals() {
-        return animals;
+    public String getNom() {
+        return nom;
     }
 
-    public void setAnimals(List<Animal> animals) {
-        this.animals = animals;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
-    public void addAnimal(Animal animal) {
-        this.animals.add(animal);
+    public String getPrenom() {
+        return prenom;
     }
 
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public LocalTime getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(LocalTime startTime) {
+        this.startTime = startTime;
+    }
+
+    public LocalTime getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(LocalTime endTime) {
+        this.endTime = endTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Nom : "+nom+" prenom : "+prenom+" age : "+age;
+    }
 }

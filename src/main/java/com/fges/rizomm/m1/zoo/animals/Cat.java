@@ -1,6 +1,6 @@
 package com.fges.rizomm.m1.zoo.animals;
 
-public class Cat extends Animal {
+public class Cat extends Vertebrate {
 
     @Override
     public String toString() {
